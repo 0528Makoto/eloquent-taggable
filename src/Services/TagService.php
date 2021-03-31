@@ -279,7 +279,7 @@ class TagService
         $tagTable = $this->getQualifiedTagTableName();
         $pivotTable = $this->getQualifiedPivotTableName();
 
-        $sql = "SELECT t.*, COUNT(t.tag_id) AS taggable_count 
+        $sql = "SELECT t.*, COUNT(t.tag_id) 
             FROM {$tagTable} t 
             LEFT JOIN {$pivotTable} tt ON tt.tag_id=t.tag_id";
         $bindings = [];
